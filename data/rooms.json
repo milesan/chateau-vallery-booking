@@ -40,6 +40,8 @@
             "rooms/fullres/suite-nuptiale-hebergements-chateau-suite-nuptiale.webp",
             "rooms/fullres/suite-nuptiale-suite-nuptiale-chateau.webp",
             "rooms/fullres/suite-nuptiale-suite-nuptiale-du-pigeonnier.webp",
+            "rooms/fullres/general-dovecote-bridal-suite.webp",
+            "rooms/fullres/general-mezzanine-de-la-chambre.webp",
             "rooms/suite-nuptiale-hq-hebergements-chateau-suite-nuptiale.webp",
             "rooms/suite-nuptiale-additional-1.webp",
             "rooms/suite-nuptiale-additional-2.webp",
@@ -160,6 +162,7 @@
           "available": true,
           "images": [
             "rooms/fullres/louis-xiii-louis-XIII-bedroom-chateau.webp",
+            "rooms/fullres/general-renaissance-bedroom.webp",
             "rooms/louis-XIII-wedding-accommodation.webp",
             "rooms/chambre-louis-XIII-renaissance.webp",
             "rooms/louis-XIII-bedroom-chateau.webp",
@@ -171,6 +174,10 @@
           "name": {
             "fr": "Épis",
             "en": "Épis"
+          },
+          "description": {
+            "fr": "Chambre intime sous les combles avec vue sur la cour",
+            "en": "Intimate attic room with courtyard view"
           },
           "features": {
             "beds": "2 single beds",
@@ -186,6 +193,8 @@
           "available": true,
           "images": [
             "rooms/fullres/general-epi-bedroom.webp",
+            "rooms/fullres/general-castle-wedding-accommodation.webp",
+            "rooms/fullres/general-chambre-du-chateau-renaissance.webp",
             "rooms/epi-bedroom.webp",
             "rooms/chambre-du-chateau-renaissance-p.webp",
             "rooms/castle-wedding-accommodation-p.webp",
@@ -198,6 +207,10 @@
           "name": {
             "fr": "Fauconnier",
             "en": "Falconer"
+          },
+          "description": {
+            "fr": "Chambre mansardée avec poutres apparentes",
+            "en": "Attic room with exposed beams"
           },
           "features": {
             "beds": "1 double bed",
@@ -216,6 +229,7 @@
             "rooms/fullres/fauconnier-fauconnier-bathroom.webp",
             "rooms/fullres/fauconnier-fauconnier-bedroom.webp",
             "rooms/fullres/fauconnier-salle-de-bain-fauconnier.webp",
+            "rooms/fullres/general-chambre-renaissance-combles-du-chateau.webp",
             "rooms/chambre-fauconnier-renaissance.webp",
             "rooms/fauconnier-bedroom.webp",
             "rooms/fauconnier-bathroom.webp",
@@ -229,6 +243,10 @@
             "fr": "Saint André I",
             "en": "Saint André I"
           },
+          "description": {
+            "fr": "Première chambre de la suite Saint André",
+            "en": "First room of the Saint André suite"
+          },
           "features": {
             "beds": "1 double bed",
             "capacity": 2,
@@ -241,6 +259,7 @@
           "level": "Second floor",
           "available": true,
           "images": [
+            "rooms/fullres/general-french-chateau-room.webp",
             "rooms/french-chateau-room-p.webp",
             "rooms/suite-saint-andre-I.webp",
             "rooms/st-andre-I-wedding-accommodation.webp",
@@ -252,6 +271,10 @@
           "name": {
             "fr": "Saint André II",
             "en": "Saint André II"
+          },
+          "description": {
+            "fr": "Chambre confortable de la suite Saint André",
+            "en": "Comfortable room in the Saint André suite"
           },
           "features": {
             "beds": "2 single beds",
@@ -266,6 +289,7 @@
           "available": true,
           "images": [
             "rooms/fullres/saint-andre-chambre-saint-andre-II.webp",
+            "rooms/fullres/general-2-beds-renaissance-wedding-room.webp",
             "rooms/2-beds-renaissance-wedding-room-p.webp",
             "rooms/suite-st-andre-II-chateau-p.webp",
             "rooms/suite-pour-invites-au-chateau-p.webp",
@@ -279,6 +303,10 @@
             "fr": "Saint André III",
             "en": "Saint André III"
           },
+          "description": {
+            "fr": "Troisième chambre de la suite Saint André",
+            "en": "Third room of the Saint André suite"
+          },
           "features": {
             "beds": "1 double bed",
             "capacity": 2,
@@ -291,6 +319,7 @@
           "level": "Second floor",
           "available": true,
           "images": [
+            "rooms/fullres/general-2-lits-simples-chambre-renaissance.webp",
             "rooms/2-lits-simples-chambre-renaissance-p.webp",
             "rooms/french-castle-accommodation-for-wedding-p.webp",
             "rooms/beds-of-saint-andre-3-p.webp"
@@ -320,9 +349,10 @@
           "level": "First floor",
           "available": true,
           "images": [
+            "rooms/fullres/general-bridal-suite-castle.webp",
+            "rooms/fullres/general-bathroom-bridal-suite.webp",
             "rooms/chateau-wedding-bedroom-p.webp",
             "rooms/bridal-suite-castle-p.webp",
-            "rooms/suite-nuptiale-chateau-p.webp",
             "rooms/mariee-dans-la-suite-p.webp",
             "rooms/hebergement-renaissance-pour-mariage-p.webp",
             "rooms/bathroom-bridal-suite-p.webp",
@@ -358,6 +388,7 @@
             "rooms/fullres/henri-iv-Henri-IV-accommodation.webp",
             "rooms/fullres/henri-iv-chambre-henri-IV-combles.webp",
             "rooms/fullres/henri-iv-henri-IV-bathroom.webp",
+            "rooms/fullres/general-renaissance-bedroom.webp",
             "rooms/chambre-henri-IV-combles.webp",
             "rooms/attic-renaissance-chateau-henri-IV.webp",
             "rooms/henri-IV-bathroom.webp",
@@ -372,6 +403,10 @@
           "name": {
             "fr": "Pierre Lescot",
             "en": "Pierre Lescot"
+          },
+          "description": {
+            "fr": "Chambre élégante honorant l'architecte Renaissance",
+            "en": "Elegant room honoring the Renaissance architect"
           },
           "features": {
             "beds": "1 double bed",
@@ -388,6 +423,8 @@
           "images": [
             "rooms/fullres/pierre-lescot-bride-in-pierre-lescot-room.webp",
             "rooms/fullres/pierre-lescot-chambre-pierre-lescot.webp",
+            "rooms/fullres/general-attic-renaissance-room-guests.webp",
+            "rooms/fullres/general-chambre-renaissance-combles-du-chateau.webp",
             "rooms/chambre-pierre-lescot.webp",
             "rooms/bride-in-pierre-lescot-room.webp",
             "rooms/attic-renaissance-room-guests-p.webp",
@@ -541,6 +578,8 @@
             "rooms/fullres/nirvana-nirvana-bath-chateau-palm-grove.webp",
             "rooms/fullres/nirvana-nirvana-palm-grove-bedroom.webp",
             "rooms/fullres/nirvana-salle-de-bain-nirvana.webp",
+            "rooms/fullres/general-chambre-de-la-palmeraie-du-chateau.webp",
+            "rooms/fullres/general-palm-grove-in-a-chateau.webp",
             "rooms/nirvana-hq-bassin-palmeraie-chateau-de-vallery.webp",
             "rooms/salle-de-bain-nirvana.webp",
             "rooms/nirvana-palm-grove-bedroom.webp",
@@ -574,6 +613,8 @@
           "images": [
             "rooms/fullres/darjeeling-darjeeling-chambre-palmeraie.webp",
             "rooms/fullres/darjeeling-darjeeling-suite-chateau.webp",
+            "rooms/fullres/general-chambre-de-la-palmeraie-du-chateau.webp",
+            "rooms/fullres/general-palm-grove-room-at-the-chateau.webp",
             "rooms/darjeeling-chambre-palmeraie.webp",
             "rooms/darjeeling-suite-chateau.webp",
             "rooms/palm-grove-room-at-the-chateau-p.webp",
@@ -585,6 +626,10 @@
           "name": {
             "fr": "Samsara",
             "en": "Samsara"
+          },
+          "description": {
+            "fr": "Refuge paisible avec décor asiatique et jardin privé",
+            "en": "Peaceful retreat with Asian decor and private garden"
           },
           "features": {
             "beds": "2 single beds",
@@ -679,6 +724,10 @@
           "images": [
             "rooms/fullres/grand-duc-chambre-grand-duc-chateau-medieval.webp",
             "rooms/fullres/grand-duc-salle-de-bain-grand-duc.webp",
+            "rooms/fullres/general-chambre-handicape-chateau.webp",
+            "rooms/fullres/general-chambre-accessible-handicape-chateau.webp",
+            "rooms/fullres/general-medieval-chateau-bath.webp",
+            "rooms/fullres/general-medieval-accommodation-bathroom.webp",
             "rooms/grand-duc-hq-chateau-medieval-vallery-ile-de-france.webp",
             "rooms/chambre-grand-duc-chateau-medieval.webp",
             "rooms/salle-de-bain-grand-duc.webp",
@@ -711,6 +760,10 @@
           "available": true,
           "images": [
             "rooms/fullres/petit-duc-medieval-petit-duc-room.webp",
+            "rooms/fullres/general-chambre-handicape-chateau.webp",
+            "rooms/fullres/general-chambre-accessible-handicape-chateau.webp",
+            "rooms/fullres/general-medieval-chateau-bath.webp",
+            "rooms/fullres/general-medieval-accommodation-bathroom.webp",
             "rooms/medieval-petit-duc-room.webp",
             "rooms/chambre-handicape-chateau-p.webp",
             "rooms/medieval-chateau-bath-p.webp"
@@ -739,6 +792,8 @@
           "price": 290,
           "available": true,
           "images": [
+            "rooms/fullres/general-medieval-bedroom-chateau.webp",
+            "rooms/fullres/general-chambre-medievale-pour-mariage.webp",
             "rooms/hebergement-medieval-au-chateau-p.webp",
             "rooms/chambre-medievale-pour-mariage-p.webp"
           ]
@@ -766,6 +821,7 @@
           "price": 250,
           "available": true,
           "images": [
+            "rooms/fullres/general-medieval-bedroom-chateau.webp",
             "rooms/medieval-bedroom-chateau-p.webp",
             "rooms/chambre-medievale-au-chateau-p.webp"
           ]

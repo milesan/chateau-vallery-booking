@@ -31,9 +31,9 @@ export const RoomModal: React.FC<RoomModalProps> = ({ room, isOpen, onClose, onB
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-château-night/95 backdrop-blur-xl border border-château-border rounded-sm max-w-4xl w-full max-h-[90vh] overflow-hidden"
+              className="bg-château-night/95 backdrop-blur-xl border border-château-border rounded-sm max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col"
             >
-              <div className="relative">
+              <div className="relative overflow-y-auto">
                 <button
                   onClick={onClose}
                   className="absolute top-4 right-4 z-10 p-2 rounded-sm bg-château-dark/80 text-château-parchment/60 hover:text-château-parchment transition-colors"
