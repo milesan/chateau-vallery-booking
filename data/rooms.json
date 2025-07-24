@@ -34,6 +34,12 @@
           },
           "price": 450,
           "images": [
+            "rooms/fullres/pigeonnier-chambre-de-la-suite-pigeonnier.webp",
+            "rooms/fullres/pigeonnier-escalier-du-pigeonnier-vallery.webp",
+            "rooms/fullres/pigeonnier-le-pigeonnier-du-chateau.webp",
+            "rooms/fullres/suite-nuptiale-hebergements-chateau-suite-nuptiale.webp",
+            "rooms/fullres/suite-nuptiale-suite-nuptiale-chateau.webp",
+            "rooms/fullres/suite-nuptiale-suite-nuptiale-du-pigeonnier.webp",
             "rooms/suite-nuptiale-hq-hebergements-chateau-suite-nuptiale.webp",
             "rooms/suite-nuptiale-additional-1.webp",
             "rooms/suite-nuptiale-additional-2.webp",
@@ -83,14 +89,18 @@
           "level": "First floor",
           "available": true,
           "images": [
+            "rooms/fullres/grand-conde-accommodation-grand-conde.webp",
+            "rooms/fullres/grand-conde-chambre-renaissance-grand-conde.webp",
+            "rooms/fullres/grand-conde-grand-conde-bath.webp",
+            "rooms/fullres/grand-conde-grand-conde-bedroom-chateau-renaissance.webp",
             "rooms/grand-conde-hq-chambre-mariage-chateau.webp",
             "rooms/chambre-renaissance-grand-conde.webp",
             "rooms/accommodation-grand-conde.webp",
             "rooms/grand-conde-bedroom-chateau-renaissance.webp",
+            "rooms/grand-conde-bath.webp",
             "rooms/chambre-preparatifs-mariage-p.webp",
             "rooms/renaissance-bathroom-in-the-chateau-p.webp",
-            "rooms/salle-de-bain-renaissance-p.webp",
-            "rooms/grand-conde-bath.webp"
+            "rooms/salle-de-bain-renaissance-p.webp"
           ]
         },
         {
@@ -116,9 +126,10 @@
           "level": "First floor",
           "available": true,
           "images": [
-            "rooms/chambre-pour-les-maries-p.webp",
+            "rooms/fullres/petit-conde-petit-conde-renaissance-bedroom.webp",
             "rooms/petit-conde-renaissance-bedroom.webp",
             "rooms/petit-conde-bath.webp",
+            "rooms/chambre-pour-les-maries-p.webp",
             "rooms/renaissance-bath-chateau-p.webp",
             "rooms/wedding-accommodation-p.webp"
           ]
@@ -148,10 +159,11 @@
           "level": "Second floor",
           "available": true,
           "images": [
-            "rooms/hebergement-pour-mariage-p.webp",
+            "rooms/fullres/louis-xiii-louis-XIII-bedroom-chateau.webp",
             "rooms/louis-XIII-wedding-accommodation.webp",
             "rooms/chambre-louis-XIII-renaissance.webp",
-            "rooms/louis-XIII-bedroom-chateau.webp"
+            "rooms/louis-XIII-bedroom-chateau.webp",
+            "rooms/hebergement-pour-mariage-p.webp"
           ]
         },
         {
@@ -173,10 +185,11 @@
           "level": "Mezzanine",
           "available": true,
           "images": [
+            "rooms/fullres/general-epi-bedroom.webp",
+            "rooms/epi-bedroom.webp",
             "rooms/chambre-du-chateau-renaissance-p.webp",
             "rooms/castle-wedding-accommodation-p.webp",
             "rooms/chateau-bedroom-p.webp",
-            "rooms/epi-bedroom.webp",
             "rooms/salle-de-bain-chateau-p.webp"
           ]
         },
@@ -199,11 +212,15 @@
           "level": "Attic",
           "available": true,
           "images": [
+            "rooms/fullres/fauconnier-chambre-fauconnier-renaissance.webp",
+            "rooms/fullres/fauconnier-fauconnier-bathroom.webp",
+            "rooms/fullres/fauconnier-fauconnier-bedroom.webp",
+            "rooms/fullres/fauconnier-salle-de-bain-fauconnier.webp",
             "rooms/chambre-fauconnier-renaissance.webp",
-            "rooms/chambre-au-chateau-de-vallery-p.webp",
             "rooms/fauconnier-bedroom.webp",
             "rooms/fauconnier-bathroom.webp",
-            "rooms/salle-de-bain-fauconnier.webp"
+            "rooms/salle-de-bain-fauconnier.webp",
+            "rooms/chambre-au-chateau-de-vallery-p.webp"
           ]
         },
         {
@@ -248,6 +265,7 @@
           "level": "Second floor",
           "available": true,
           "images": [
+            "rooms/fullres/saint-andre-chambre-saint-andre-II.webp",
             "rooms/2-beds-renaissance-wedding-room-p.webp",
             "rooms/suite-st-andre-II-chateau-p.webp",
             "rooms/suite-pour-invites-au-chateau-p.webp",
@@ -337,6 +355,9 @@
           "level": "First floor",
           "available": true,
           "images": [
+            "rooms/fullres/henri-iv-Henri-IV-accommodation.webp",
+            "rooms/fullres/henri-iv-chambre-henri-IV-combles.webp",
+            "rooms/fullres/henri-iv-henri-IV-bathroom.webp",
             "rooms/chambre-henri-IV-combles.webp",
             "rooms/attic-renaissance-chateau-henri-IV.webp",
             "rooms/henri-IV-bathroom.webp",
@@ -365,9 +386,11 @@
           "level": "Second floor",
           "available": true,
           "images": [
-            "rooms/attic-renaissance-room-guests-p.webp",
+            "rooms/fullres/pierre-lescot-bride-in-pierre-lescot-room.webp",
+            "rooms/fullres/pierre-lescot-chambre-pierre-lescot.webp",
             "rooms/chambre-pierre-lescot.webp",
             "rooms/bride-in-pierre-lescot-room.webp",
+            "rooms/attic-renaissance-room-guests-p.webp",
             "rooms/chambre-renaissance-combles-du-chateau-p.webp"
           ]
         }
@@ -409,12 +432,15 @@
           "price": 500,
           "available": true,
           "images": [
+            "rooms/fullres/loft-chambre-loft.webp",
+            "rooms/fullres/loft-loft-appartement-oriental-chateau.webp",
+            "rooms/fullres/loft-loft-bathroom.webp",
             "rooms/loft-suite-hq-chambre-orientale-chateau-de-vallery.webp",
-            "rooms/bridal-oriental-suite-wedding-p.webp",
             "rooms/chambre-loft.webp",
             "rooms/loft-bathroom.webp",
-            "rooms/chambre-piscine-chateau-p.webp",
-            "rooms/loft-appartement-oriental-chateau.webp"
+            "rooms/loft-appartement-oriental-chateau.webp",
+            "rooms/bridal-oriental-suite-wedding-p.webp",
+            "rooms/chambre-piscine-chateau-p.webp"
           ]
         },
         {
@@ -440,9 +466,10 @@
           "price": 220,
           "available": true,
           "images": [
+            "rooms/fullres/oriental-salle-bain-oriental-sahara.webp",
+            "rooms/salle-bain-oriental-sahara.webp",
             "rooms/oriental-bedroom-at-the-chateau-p.webp",
-            "rooms/chambre-orientale-au-chateau-de-vallery-p.webp",
-            "rooms/salle-bain-oriental-sahara.webp"
+            "rooms/chambre-orientale-au-chateau-de-vallery-p.webp"
           ]
         },
         {
@@ -468,8 +495,9 @@
           "price": 240,
           "available": true,
           "images": [
-            "rooms/chambre-pour-hebergement-mariage-p.webp",
+            "rooms/fullres/oriental-levant-oriental-bedroom-wedding.webp",
             "rooms/levant-oriental-bedroom-wedding.webp",
+            "rooms/chambre-pour-hebergement-mariage-p.webp",
             "rooms/couloir-chambre-orientale-p.webp",
             "rooms/oriental-part-castle-bath-p.webp"
           ]
@@ -510,12 +538,15 @@
           "price": 260,
           "available": true,
           "images": [
+            "rooms/fullres/nirvana-nirvana-bath-chateau-palm-grove.webp",
+            "rooms/fullres/nirvana-nirvana-palm-grove-bedroom.webp",
+            "rooms/fullres/nirvana-salle-de-bain-nirvana.webp",
             "rooms/nirvana-hq-bassin-palmeraie-chateau-de-vallery.webp",
-            "rooms/palm-grove-in-a-chateau-p.webp",
-            "rooms/chambre-de-la-palmeraie-du-chateau-p.webp",
             "rooms/salle-de-bain-nirvana.webp",
             "rooms/nirvana-palm-grove-bedroom.webp",
-            "rooms/nirvana-bath-chateau-palm-grove.webp"
+            "rooms/nirvana-bath-chateau-palm-grove.webp",
+            "rooms/palm-grove-in-a-chateau-p.webp",
+            "rooms/chambre-de-la-palmeraie-du-chateau-p.webp"
           ]
         },
         {
@@ -541,9 +572,11 @@
           "price": 230,
           "available": true,
           "images": [
+            "rooms/fullres/darjeeling-darjeeling-chambre-palmeraie.webp",
+            "rooms/fullres/darjeeling-darjeeling-suite-chateau.webp",
             "rooms/darjeeling-chambre-palmeraie.webp",
-            "rooms/palm-grove-room-at-the-chateau-p.webp",
             "rooms/darjeeling-suite-chateau.webp",
+            "rooms/palm-grove-room-at-the-chateau-p.webp",
             "rooms/palmgrove-bathroom-p.webp"
           ]
         },
@@ -565,10 +598,13 @@
           "price": 210,
           "available": true,
           "images": [
+            "rooms/fullres/palmgrove-samsara-bedroom-palmgrove-chateau.webp",
+            "rooms/fullres/samsara-chambre-samsara.webp",
+            "rooms/fullres/samsara-samsara-bath.webp",
             "rooms/samsara-bedroom-palmgrove-chateau.webp",
             "rooms/chambre-samsara.webp",
-            "rooms/palmgrove-bathrooom-for-accommodation-p.webp",
-            "rooms/samsara-bath.webp"
+            "rooms/samsara-bath.webp",
+            "rooms/palmgrove-bathrooom-for-accommodation-p.webp"
           ]
         },
         {
@@ -594,6 +630,10 @@
           "price": 190,
           "available": true,
           "images": [
+            "rooms/fullres/figuier-figuier-accommodation.webp",
+            "rooms/fullres/figuier-maisonnette-figuier-au-chateau.webp",
+            "rooms/fullres/figuier-salle-de-bain-figuier.webp",
+            "rooms/fullres/figuier-salon-hebergement-figuier.webp",
             "rooms/figuier-accommodation.webp",
             "rooms/salle-de-bain-figuier.webp",
             "rooms/salon-hebergement-figuier.webp",
@@ -637,11 +677,13 @@
           "price": 270,
           "available": true,
           "images": [
+            "rooms/fullres/grand-duc-chambre-grand-duc-chateau-medieval.webp",
+            "rooms/fullres/grand-duc-salle-de-bain-grand-duc.webp",
             "rooms/grand-duc-hq-chateau-medieval-vallery-ile-de-france.webp",
-            "rooms/chambre-accessible-handicape-chateau-p.webp",
-            "rooms/medieval-accommodation-bathroom-p.webp",
             "rooms/chambre-grand-duc-chateau-medieval.webp",
-            "rooms/salle-de-bain-grand-duc.webp"
+            "rooms/salle-de-bain-grand-duc.webp",
+            "rooms/chambre-accessible-handicape-chateau-p.webp",
+            "rooms/medieval-accommodation-bathroom-p.webp"
           ]
         },
         {
@@ -668,6 +710,7 @@
           "price": 240,
           "available": true,
           "images": [
+            "rooms/fullres/petit-duc-medieval-petit-duc-room.webp",
             "rooms/medieval-petit-duc-room.webp",
             "rooms/chambre-handicape-chateau-p.webp",
             "rooms/medieval-chateau-bath-p.webp"
