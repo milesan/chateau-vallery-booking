@@ -1,0 +1,733 @@
+{
+  "sections": {
+    "pigeonnier": {
+      "id": "pigeonnier",
+      "name": {
+        "fr": "Le Pigeonnier",
+        "en": "The Dovecote"
+      },
+      "description": {
+        "fr": "Une suite nuptiale unique sur trois niveaux",
+        "en": "A unique three-level bridal suite"
+      },
+      "rooms": [
+        {
+          "id": "suite-nuptiale",
+          "name": {
+            "fr": "Suite Nuptiale",
+            "en": "Bridal Suite"
+          },
+          "description": {
+            "fr": "Suite exceptionnelle sur 3 niveaux avec lit circulaire et baignoire monolithe",
+            "en": "Exceptional 3-level suite with circular bed and monolithic bathtub"
+          },
+          "features": {
+            "beds": "1 circular bed (2.10m)",
+            "capacity": 2,
+            "bathroom": "private",
+            "size": "3 levels",
+            "amenities": [
+              "Monolithic stone bathtub",
+              "Astronomical view",
+              "Unique design"
+            ]
+          },
+          "price": 450,
+          "images": [
+            "rooms/suite-nuptiale-hq-hebergements-chateau-suite-nuptiale.webp",
+            "rooms/suite-nuptiale-additional-1.webp",
+            "rooms/suite-nuptiale-additional-2.webp",
+            "rooms/suite-nuptiale-additional-3.webp",
+            "rooms/suite-nuptiale-additional-4.webp",
+            "rooms/suite-nuptiale-additional-5.webp",
+            "rooms/escalier-du-pigeonnier-vallery.webp",
+            "rooms/le-pigeonnier-du-chateau.webp",
+            "rooms/mezzanine-de-la-chambre-p.webp"
+          ],
+          "available": true
+        }
+      ]
+    },
+    "renaissance": {
+      "id": "renaissance",
+      "name": {
+        "fr": "Aile Renaissance",
+        "en": "Renaissance Wing"
+      },
+      "description": {
+        "fr": "16 chambres réparties sur 4 niveaux dans l'aile historique",
+        "en": "16 rooms spread across 4 levels in the historic wing"
+      },
+      "rooms": [
+        {
+          "id": "grand-conde",
+          "name": {
+            "fr": "Grand Condé",
+            "en": "Grand Condé"
+          },
+          "description": {
+            "fr": "Chambre spacieuse avec vue sur les jardins",
+            "en": "Spacious room with garden views"
+          },
+          "features": {
+            "beds": "1 king size bed",
+            "capacity": 2,
+            "bathroom": "private",
+            "amenities": [
+              "Heating",
+              "Garden view",
+              "Period furniture"
+            ]
+          },
+          "price": 250,
+          "level": "First floor",
+          "available": true,
+          "images": [
+            "rooms/grand-conde-hq-chambre-mariage-chateau.webp",
+            "rooms/chambre-renaissance-grand-conde.webp",
+            "rooms/accommodation-grand-conde.webp",
+            "rooms/grand-conde-bedroom-chateau-renaissance.webp",
+            "rooms/chambre-preparatifs-mariage-p.webp",
+            "rooms/renaissance-bathroom-in-the-chateau-p.webp",
+            "rooms/salle-de-bain-renaissance-p.webp",
+            "rooms/grand-conde-bath.webp"
+          ]
+        },
+        {
+          "id": "petit-conde",
+          "name": {
+            "fr": "Petit Condé",
+            "en": "Petit Condé"
+          },
+          "description": {
+            "fr": "Chambre confortable avec charme historique",
+            "en": "Comfortable room with historic charm"
+          },
+          "features": {
+            "beds": "1 double bed",
+            "capacity": 2,
+            "bathroom": "private",
+            "amenities": [
+              "Heating",
+              "Renaissance decor"
+            ]
+          },
+          "price": 200,
+          "level": "First floor",
+          "available": true,
+          "images": [
+            "rooms/chambre-pour-les-maries-p.webp",
+            "rooms/petit-conde-renaissance-bedroom.webp",
+            "rooms/petit-conde-bath.webp",
+            "rooms/renaissance-bath-chateau-p.webp",
+            "rooms/wedding-accommodation-p.webp"
+          ]
+        },
+        {
+          "id": "louis-xiii",
+          "name": {
+            "fr": "Louis XIII",
+            "en": "Louis XIII"
+          },
+          "description": {
+            "fr": "Suite royale avec mobilier d'époque",
+            "en": "Royal suite with period furniture"
+          },
+          "features": {
+            "beds": "1 king size bed",
+            "capacity": 2,
+            "bathroom": "private",
+            "size": "45m²",
+            "amenities": [
+              "Private lounge",
+              "Fireplace",
+              "Castle view"
+            ]
+          },
+          "price": 320,
+          "level": "Second floor",
+          "available": true,
+          "images": [
+            "rooms/hebergement-pour-mariage-p.webp",
+            "rooms/louis-XIII-wedding-accommodation.webp",
+            "rooms/chambre-louis-XIII-renaissance.webp",
+            "rooms/louis-XIII-bedroom-chateau.webp"
+          ]
+        },
+        {
+          "id": "epis",
+          "name": {
+            "fr": "Épis",
+            "en": "Épis"
+          },
+          "features": {
+            "beds": "2 single beds",
+            "capacity": 2,
+            "bathroom": "shared",
+            "amenities": [
+              "Heating",
+              "Courtyard view"
+            ]
+          },
+          "price": 150,
+          "level": "Mezzanine",
+          "available": true,
+          "images": [
+            "rooms/chambre-du-chateau-renaissance-p.webp",
+            "rooms/castle-wedding-accommodation-p.webp",
+            "rooms/chateau-bedroom-p.webp",
+            "rooms/epi-bedroom.webp",
+            "rooms/salle-de-bain-chateau-p.webp"
+          ]
+        },
+        {
+          "id": "fauconnier",
+          "name": {
+            "fr": "Fauconnier",
+            "en": "Falconer"
+          },
+          "features": {
+            "beds": "1 double bed",
+            "capacity": 2,
+            "bathroom": "private",
+            "amenities": [
+              "Heating",
+              "Exposed beams"
+            ]
+          },
+          "price": 180,
+          "level": "Attic",
+          "available": true,
+          "images": [
+            "rooms/chambre-fauconnier-renaissance.webp",
+            "rooms/chambre-au-chateau-de-vallery-p.webp",
+            "rooms/fauconnier-bedroom.webp",
+            "rooms/fauconnier-bathroom.webp",
+            "rooms/salle-de-bain-fauconnier.webp"
+          ]
+        },
+        {
+          "id": "saint-andre-i",
+          "name": {
+            "fr": "Saint André I",
+            "en": "Saint André I"
+          },
+          "features": {
+            "beds": "1 double bed",
+            "capacity": 2,
+            "bathroom": "shared",
+            "amenities": [
+              "Heating"
+            ]
+          },
+          "price": 140,
+          "level": "Second floor",
+          "available": true,
+          "images": [
+            "rooms/french-chateau-room-p.webp",
+            "rooms/suite-saint-andre-I.webp",
+            "rooms/st-andre-I-wedding-accommodation.webp",
+            "rooms/bains-de-la-suite-st-andre-p.webp"
+          ]
+        },
+        {
+          "id": "saint-andre-ii",
+          "name": {
+            "fr": "Saint André II",
+            "en": "Saint André II"
+          },
+          "features": {
+            "beds": "2 single beds",
+            "capacity": 2,
+            "bathroom": "shared",
+            "amenities": [
+              "Heating"
+            ]
+          },
+          "price": 140,
+          "level": "Second floor",
+          "available": true,
+          "images": [
+            "rooms/2-beds-renaissance-wedding-room-p.webp",
+            "rooms/suite-st-andre-II-chateau-p.webp",
+            "rooms/suite-pour-invites-au-chateau-p.webp",
+            "rooms/chambre-saint-andre-II-p.webp",
+            "rooms/bedroom-suite-p.webp"
+          ]
+        },
+        {
+          "id": "saint-andre-iii",
+          "name": {
+            "fr": "Saint André III",
+            "en": "Saint André III"
+          },
+          "features": {
+            "beds": "1 double bed",
+            "capacity": 2,
+            "bathroom": "shared",
+            "amenities": [
+              "Heating"
+            ]
+          },
+          "price": 140,
+          "level": "Second floor",
+          "available": true,
+          "images": [
+            "rooms/2-lits-simples-chambre-renaissance-p.webp",
+            "rooms/french-castle-accommodation-for-wedding-p.webp",
+            "rooms/beds-of-saint-andre-3-p.webp"
+          ]
+        },
+        {
+          "id": "charlotte-de-montmorency",
+          "name": {
+            "fr": "Charlotte de Montmorency",
+            "en": "Charlotte de Montmorency"
+          },
+          "description": {
+            "fr": "Chambre élégante avec décoration féminine",
+            "en": "Elegant room with feminine decoration"
+          },
+          "features": {
+            "beds": "1 king size bed",
+            "capacity": 2,
+            "bathroom": "private",
+            "amenities": [
+              "Boudoir",
+              "Park view",
+              "Romantic decor"
+            ]
+          },
+          "price": 280,
+          "level": "First floor",
+          "available": true,
+          "images": [
+            "rooms/chateau-wedding-bedroom-p.webp",
+            "rooms/bridal-suite-castle-p.webp",
+            "rooms/suite-nuptiale-chateau-p.webp",
+            "rooms/mariee-dans-la-suite-p.webp",
+            "rooms/hebergement-renaissance-pour-mariage-p.webp",
+            "rooms/bathroom-bridal-suite-p.webp",
+            "rooms/warthog-head-p.webp",
+            "rooms/entrance-to-the-suite-p.webp"
+          ]
+        },
+        {
+          "id": "henri-iv",
+          "name": {
+            "fr": "Henri IV",
+            "en": "Henri IV"
+          },
+          "description": {
+            "fr": "Suite majestueuse digne d'un roi",
+            "en": "Majestic suite fit for a king"
+          },
+          "features": {
+            "beds": "1 king size bed",
+            "capacity": 2,
+            "bathroom": "private",
+            "size": "50m²",
+            "amenities": [
+              "Anteroom",
+              "Monumental fireplace",
+              "Tapestries"
+            ]
+          },
+          "price": 350,
+          "level": "First floor",
+          "available": true,
+          "images": [
+            "rooms/chambre-henri-IV-combles.webp",
+            "rooms/attic-renaissance-chateau-henri-IV.webp",
+            "rooms/henri-IV-bathroom.webp",
+            "rooms/hebergement-dans-le-chateau-p.webp",
+            "rooms/Henri-IV-accommodation-p.webp",
+            "rooms/bath-detail-p.webp",
+            "rooms/room-detail-p.webp"
+          ]
+        },
+        {
+          "id": "pierre-lescot",
+          "name": {
+            "fr": "Pierre Lescot",
+            "en": "Pierre Lescot"
+          },
+          "features": {
+            "beds": "1 double bed",
+            "capacity": 2,
+            "bathroom": "private",
+            "amenities": [
+              "Renaissance architecture",
+              "Heating"
+            ]
+          },
+          "price": 220,
+          "level": "Second floor",
+          "available": true,
+          "images": [
+            "rooms/attic-renaissance-room-guests-p.webp",
+            "rooms/chambre-pierre-lescot.webp",
+            "rooms/bride-in-pierre-lescot-room.webp",
+            "rooms/chambre-renaissance-combles-du-chateau-p.webp"
+          ]
+        }
+      ]
+    },
+    "oriental": {
+      "id": "oriental",
+      "name": {
+        "fr": "Espace Oriental",
+        "en": "Oriental Space"
+      },
+      "description": {
+        "fr": "3 chambres aux influences exotiques",
+        "en": "3 rooms with exotic influences"
+      },
+      "rooms": [
+        {
+          "id": "loft-suite",
+          "name": {
+            "fr": "Loft Suite",
+            "en": "Loft Suite"
+          },
+          "description": {
+            "fr": "Suite spectaculaire de 150m² avec décor oriental",
+            "en": "Spectacular 150m² suite with oriental decor"
+          },
+          "features": {
+            "beds": "1 king size bed + sofa beds",
+            "capacity": 6,
+            "bathroom": "private",
+            "size": "150m²",
+            "amenities": [
+              "Spacious lounge",
+              "Oriental decoration",
+              "Relaxation area",
+              "Panoramic view"
+            ]
+          },
+          "price": 500,
+          "available": true,
+          "images": [
+            "rooms/loft-suite-hq-chambre-orientale-chateau-de-vallery.webp",
+            "rooms/bridal-oriental-suite-wedding-p.webp",
+            "rooms/chambre-loft.webp",
+            "rooms/loft-bathroom.webp",
+            "rooms/chambre-piscine-chateau-p.webp",
+            "rooms/loft-appartement-oriental-chateau.webp"
+          ]
+        },
+        {
+          "id": "sahara",
+          "name": {
+            "fr": "Sahara",
+            "en": "Sahara"
+          },
+          "description": {
+            "fr": "Chambre aux tons chauds du désert",
+            "en": "Room with warm desert tones"
+          },
+          "features": {
+            "beds": "1 double bed",
+            "capacity": 2,
+            "bathroom": "private",
+            "amenities": [
+              "Berber decor",
+              "Handcrafted carpets",
+              "Soft lighting"
+            ]
+          },
+          "price": 220,
+          "available": true,
+          "images": [
+            "rooms/oriental-bedroom-at-the-chateau-p.webp",
+            "rooms/chambre-orientale-au-chateau-de-vallery-p.webp",
+            "rooms/salle-bain-oriental-sahara.webp"
+          ]
+        },
+        {
+          "id": "levant",
+          "name": {
+            "fr": "Levant",
+            "en": "Levant"
+          },
+          "description": {
+            "fr": "Chambre inspirée des palais du Moyen-Orient",
+            "en": "Room inspired by Middle Eastern palaces"
+          },
+          "features": {
+            "beds": "1 king size bed",
+            "capacity": 2,
+            "bathroom": "private",
+            "amenities": [
+              "Mosaics",
+              "Moorish arches",
+              "Oriental fragrances"
+            ]
+          },
+          "price": 240,
+          "available": true,
+          "images": [
+            "rooms/chambre-pour-hebergement-mariage-p.webp",
+            "rooms/levant-oriental-bedroom-wedding.webp",
+            "rooms/couloir-chambre-orientale-p.webp",
+            "rooms/oriental-part-castle-bath-p.webp"
+          ]
+        }
+      ]
+    },
+    "palmeraie": {
+      "id": "palmeraie",
+      "name": {
+        "fr": "La Palmeraie",
+        "en": "The Palm Grove"
+      },
+      "description": {
+        "fr": "4 chambres dans un cadre verdoyant",
+        "en": "4 rooms in a lush setting"
+      },
+      "rooms": [
+        {
+          "id": "nirvana",
+          "name": {
+            "fr": "Nirvana",
+            "en": "Nirvana"
+          },
+          "description": {
+            "fr": "Havre de paix avec vue sur la palmeraie",
+            "en": "Haven of peace overlooking the palm grove"
+          },
+          "features": {
+            "beds": "1 king size bed",
+            "capacity": 2,
+            "bathroom": "private",
+            "amenities": [
+              "Private terrace",
+              "Palm grove view",
+              "Zen decor"
+            ]
+          },
+          "price": 260,
+          "available": true,
+          "images": [
+            "rooms/nirvana-hq-bassin-palmeraie-chateau-de-vallery.webp",
+            "rooms/palm-grove-in-a-chateau-p.webp",
+            "rooms/chambre-de-la-palmeraie-du-chateau-p.webp",
+            "rooms/salle-de-bain-nirvana.webp",
+            "rooms/nirvana-palm-grove-bedroom.webp",
+            "rooms/nirvana-bath-chateau-palm-grove.webp"
+          ]
+        },
+        {
+          "id": "darjeeling",
+          "name": {
+            "fr": "Darjeeling",
+            "en": "Darjeeling"
+          },
+          "description": {
+            "fr": "Chambre aux influences indiennes",
+            "en": "Room with Indian influences"
+          },
+          "features": {
+            "beds": "1 double bed",
+            "capacity": 2,
+            "bathroom": "private",
+            "amenities": [
+              "Indian fabrics",
+              "Colonial furniture",
+              "Serene atmosphere"
+            ]
+          },
+          "price": 230,
+          "available": true,
+          "images": [
+            "rooms/darjeeling-chambre-palmeraie.webp",
+            "rooms/palm-grove-room-at-the-chateau-p.webp",
+            "rooms/darjeeling-suite-chateau.webp",
+            "rooms/palmgrove-bathroom-p.webp"
+          ]
+        },
+        {
+          "id": "samsara",
+          "name": {
+            "fr": "Samsara",
+            "en": "Samsara"
+          },
+          "features": {
+            "beds": "2 single beds",
+            "capacity": 2,
+            "bathroom": "private",
+            "amenities": [
+              "Asian decor",
+              "Private garden"
+            ]
+          },
+          "price": 210,
+          "available": true,
+          "images": [
+            "rooms/samsara-bedroom-palmgrove-chateau.webp",
+            "rooms/chambre-samsara.webp",
+            "rooms/palmgrove-bathrooom-for-accommodation-p.webp",
+            "rooms/samsara-bath.webp"
+          ]
+        },
+        {
+          "id": "figuier",
+          "name": {
+            "fr": "Figuier",
+            "en": "Fig Tree"
+          },
+          "description": {
+            "fr": "Chambre rustique sous les figuiers",
+            "en": "Rustic room under the fig trees"
+          },
+          "features": {
+            "beds": "1 double bed",
+            "capacity": 2,
+            "bathroom": "private",
+            "amenities": [
+              "Garden view",
+              "Ancient beams",
+              "Rustic charm"
+            ]
+          },
+          "price": 190,
+          "available": true,
+          "images": [
+            "rooms/figuier-accommodation.webp",
+            "rooms/salle-de-bain-figuier.webp",
+            "rooms/salon-hebergement-figuier.webp",
+            "rooms/maisonnette-figuier-au-chateau.webp"
+          ]
+        }
+      ]
+    },
+    "medieval": {
+      "id": "medieval",
+      "name": {
+        "fr": "Tour Médiévale",
+        "en": "Medieval Tower"
+      },
+      "description": {
+        "fr": "4 chambres dans l'ancienne tour du XIIIe siècle",
+        "en": "4 rooms in the ancient 13th century tower"
+      },
+      "rooms": [
+        {
+          "id": "grand-duc",
+          "name": {
+            "fr": "Grand Duc",
+            "en": "Grand Duke"
+          },
+          "description": {
+            "fr": "Chambre accessible PMR avec caractère médiéval",
+            "en": "Accessible room with medieval character"
+          },
+          "features": {
+            "beds": "1 king size bed",
+            "capacity": 2,
+            "bathroom": "private",
+            "amenities": [
+              "Wheelchair access",
+              "Exposed stone",
+              "Ancient vaults"
+            ],
+            "accessibility": true
+          },
+          "price": 270,
+          "available": true,
+          "images": [
+            "rooms/grand-duc-hq-chateau-medieval-vallery-ile-de-france.webp",
+            "rooms/chambre-accessible-handicape-chateau-p.webp",
+            "rooms/medieval-accommodation-bathroom-p.webp",
+            "rooms/chambre-grand-duc-chateau-medieval.webp",
+            "rooms/salle-de-bain-grand-duc.webp"
+          ]
+        },
+        {
+          "id": "petit-duc",
+          "name": {
+            "fr": "Petit Duc",
+            "en": "Petit Duke"
+          },
+          "description": {
+            "fr": "Chambre accessible PMR dans la tour",
+            "en": "Accessible room in the tower"
+          },
+          "features": {
+            "beds": "1 double bed",
+            "capacity": 2,
+            "bathroom": "private",
+            "amenities": [
+              "Wheelchair access",
+              "Stone walls",
+              "Authentic atmosphere"
+            ],
+            "accessibility": true
+          },
+          "price": 240,
+          "available": true,
+          "images": [
+            "rooms/medieval-petit-duc-room.webp",
+            "rooms/chambre-handicape-chateau-p.webp",
+            "rooms/medieval-chateau-bath-p.webp"
+          ]
+        },
+        {
+          "id": "dame-blanche",
+          "name": {
+            "fr": "Dame Blanche",
+            "en": "White Lady"
+          },
+          "description": {
+            "fr": "Chambre romantique avec légende",
+            "en": "Romantic room with legend"
+          },
+          "features": {
+            "beds": "1 king size bed",
+            "capacity": 2,
+            "bathroom": "private",
+            "amenities": [
+              "Romantic decor",
+              "Tower view",
+              "Legendary history"
+            ]
+          },
+          "price": 290,
+          "available": true,
+          "images": [
+            "rooms/hebergement-medieval-au-chateau-p.webp",
+            "rooms/chambre-medievale-pour-mariage-p.webp"
+          ]
+        },
+        {
+          "id": "chouette",
+          "name": {
+            "fr": "Chouette",
+            "en": "Owl"
+          },
+          "description": {
+            "fr": "Chambre cosy au sommet de la tour",
+            "en": "Cozy room at the top of the tower"
+          },
+          "features": {
+            "beds": "1 double bed",
+            "capacity": 2,
+            "bathroom": "private",
+            "amenities": [
+              "Panoramic view",
+              "Cozy nest",
+              "Absolute tranquility"
+            ]
+          },
+          "price": 250,
+          "available": true,
+          "images": [
+            "rooms/medieval-bedroom-chateau-p.webp",
+            "rooms/chambre-medievale-au-chateau-p.webp"
+          ]
+        }
+      ]
+    }
+  }
+}

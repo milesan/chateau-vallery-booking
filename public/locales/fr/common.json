@@ -1,0 +1,60 @@
+{
+  "common": {
+    "book": "Réserver",
+    "select": "Sélectionner",
+    "close": "Fermer",
+    "back": "Retour",
+    "continue": "Continuer",
+    "night": "nuit",
+    "nights": "nuits",
+    "guest": "personne",
+    "guests": "personnes",
+    "available": "Disponible",
+    "unavailable": "Indisponible",
+    "total": "Total",
+    "subtotal": "Sous-total"
+  },
+  "header": {
+    "title": "Château de Vallery",
+    "subtitle": "Une expérience unique",
+    "event": "Événement Exclusif"
+  },
+  "sections": {
+    "explore": "Explorer les Chambres",
+    "filter": "Filtrer par aile"
+  },
+  "room": {
+    "features": "Caractéristiques",
+    "amenities": "Équipements",
+    "capacity": "Capacité",
+    "bathroom": "Salle de bain",
+    "private": "Privée",
+    "shared": "Partagée",
+    "level": "Étage",
+    "accessible": "Accès PMR"
+  },
+  "booking": {
+    "title": "Réservation",
+    "selectDates": "Sélectionnez vos dates",
+    "checkIn": "Arrivée",
+    "checkOut": "Départ",
+    "personalInfo": "Informations personnelles",
+    "name": "Nom complet",
+    "email": "Email",
+    "phone": "Téléphone",
+    "specialRequests": "Demandes spéciales",
+    "payment": "Paiement",
+    "securePayment": "Paiement sécurisé par Stripe",
+    "confirm": "Confirmer la réservation",
+    "success": {
+      "title": "Réservation Confirmée",
+      "message": "Votre réservation a été confirmée avec succès. Vous recevrez un email de confirmation sous peu.",
+      "confirmationNumber": "Numéro de confirmation"
+    }
+  },
+  "footer": {
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "contact": "Contact"
+  }
+}
