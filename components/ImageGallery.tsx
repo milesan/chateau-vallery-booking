@@ -59,7 +59,7 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images, alt, classNa
                 <ChevronRight className="w-5 h-5" />
               </button>
               
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center space-x-1 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center justify-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
                 {images.map((_, index) => (
                   <button
                     key={index}
@@ -68,10 +68,10 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images, alt, classNa
                       setCurrentIndex(index);
                     }}
                     className={cn(
-                      "h-2 rounded-full transition-all pointer-events-auto",
+                      "block rounded-full transition-all pointer-events-auto",
                       index === currentIndex
-                        ? "bg-château-parchment w-6"
-                        : "bg-château-parchment/40 w-2"
+                        ? "bg-château-parchment w-6 h-2"
+                        : "bg-château-parchment/40 w-2 h-2"
                     )}
                     aria-label={`Go to image ${index + 1}`}
                   />
