@@ -1,0 +1,21 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  NEXT_USE_NETLIFY_EDGE = "true"
+
+[[redirects]]
+  from = "/"
+  to = "/fr"
+  status = 302
+  conditions = {Language = ["fr"]}
+
+[[redirects]]
+  from = "/"
+  to = "/en"
+  status = 302
+  conditions = {Language = ["en"]}
