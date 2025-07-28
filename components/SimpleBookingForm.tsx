@@ -8,7 +8,15 @@ import { formatPrice } from '../lib/utils'
 import { Button } from './Button'
 import { X, User, Mail, Phone } from 'lucide-react'
 
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
+// Check if Stripe publishable key is configured
+const stripeKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+if (!stripeKey || stripeKey.includes('YOUR_PUBLISHABLE_KEY')) {
+  console.warn('Stripe publishable key is not properly configured. Payment will not work.')
+}
+
+const stripePromise = stripeKey && !stripeKey.includes('YOUR_PUBLISHABLE_KEY') 
+  ? loadStripe(stripeKey) 
+  : null
 
 interface SimpleBookingFormProps {
   room: Room
@@ -71,6 +79,12 @@ export const SimpleBookingForm: React.FC<SimpleBookingFormProps> = ({ room, onCl
     setError(null)
 
     if (!validateForm()) {
+      return
+    }
+
+    // Check if Stripe is properly configured
+    if (!stripePromise) {
+      setError(t('errors.stripeNotConfigured') || 'Payment system is not configured. Please contact support.')
       return
     }
 

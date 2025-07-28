@@ -50,10 +50,12 @@ npm install
 ```
 
 2. Set up environment variables:
-Create a `.env.local` file with:
+   - Copy `.env.example` to `.env.local`
+   - Get your Stripe test keys from [Stripe Dashboard](https://dashboard.stripe.com/test/apikeys)
+   - Update `.env.local` with your actual keys:
 ```
-STRIPE_SECRET_KEY=your_stripe_secret_key
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
+STRIPE_SECRET_KEY=sk_test_... (your secret key)
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_... (your publishable key)
 ```
 
 3. Run the development server:
