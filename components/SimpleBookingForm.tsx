@@ -1,4 +1,3 @@
-'use client'
 
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
@@ -19,7 +18,13 @@ interface SimpleBookingFormProps {
 export const SimpleBookingForm: React.FC<SimpleBookingFormProps> = ({ room, onClose }) => {
   const { t, i18n } = useTranslation()
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+  })
+  const [validation, setValidation] = useState({
     name: '',
     email: '',
     phone: '',
@@ -31,8 +36,44 @@ export const SimpleBookingForm: React.FC<SimpleBookingFormProps> = ({ room, onCl
   const nights = 5
   const totalPrice = nights * room.price
 
+  const validateForm = () => {
+    const errors = {
+      name: '',
+      email: '',
+      phone: '',
+    }
+    let isValid = true
+
+    if (!formData.name.trim()) {
+      errors.name = t('validation.nameRequired')
+      isValid = false
+    }
+
+    if (!formData.email.trim()) {
+      errors.email = t('validation.emailRequired')
+      isValid = false
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      errors.email = t('validation.emailInvalid')
+      isValid = false
+    }
+
+    if (!formData.phone.trim()) {
+      errors.phone = t('validation.phoneRequired')
+      isValid = false
+    }
+
+    setValidation(errors)
+    return isValid
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setError(null)
+
+    if (!validateForm()) {
+      return
+    }
+
     setLoading(true)
 
     try {
@@ -53,18 +94,25 @@ export const SimpleBookingForm: React.FC<SimpleBookingFormProps> = ({ room, onCl
         }),
       })
 
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}))
+        throw new Error(errorData.error || t('errors.checkoutFailed'))
+      }
+
       const { sessionId } = await response.json()
       const stripe = await stripePromise
 
-      if (stripe) {
-        const { error } = await stripe.redirectToCheckout({ sessionId })
-        if (error) {
-          console.error(error)
-        }
+      if (!stripe) {
+        throw new Error(t('errors.stripeLoadFailed'))
+      }
+
+      const { error: stripeError } = await stripe.redirectToCheckout({ sessionId })
+      if (stripeError) {
+        throw new Error(stripeError.message || t('errors.paymentFailed'))
       }
     } catch (error) {
       console.error('Error creating checkout session:', error)
-    } finally {
+      setError(error instanceof Error ? error.message : t('errors.genericError'))
       setLoading(false)
     }
   }
@@ -85,7 +133,7 @@ export const SimpleBookingForm: React.FC<SimpleBookingFormProps> = ({ room, onCl
           <div className="flex justify-between items-start mb-8">
             <div>
               <h2 className="text-3xl font-serif text-château-parchment mb-2 lowercase">
-                booking
+                {t('booking.title')}
               </h2>
               <p className="text-château-parchment/60">
                 {room.name[i18n.language as 'fr' | 'en']}
@@ -94,6 +142,7 @@ export const SimpleBookingForm: React.FC<SimpleBookingFormProps> = ({ room, onCl
             <button
               onClick={onClose}
               className="p-2 rounded-sm text-château-parchment/60 hover:text-château-parchment transition-colors"
+              aria-label={t('common.close')}
             >
               <X className="w-5 h-5" />
             </button>
@@ -101,17 +150,23 @@ export const SimpleBookingForm: React.FC<SimpleBookingFormProps> = ({ room, onCl
 
           <div className="mb-8 p-6 bg-château-dark/30 border border-château-border rounded-sm">
             <div className="text-château-parchment/80 space-y-2">
-              <p className="text-sm uppercase tracking-wider">event dates</p>
-              <p className="text-2xl font-serif">september 21-26, 2025</p>
-              <p className="text-sm text-château-parchment/60">check-in: 3:00 pm • check-out: 11:30 am</p>
+              <p className="text-sm uppercase tracking-wider">{t('booking.eventDates')}</p>
+              <p className="text-2xl font-serif">{t('booking.eventDateRange')}</p>
+              <p className="text-sm text-château-parchment/60">{t('booking.checkInOut')}</p>
             </div>
           </div>
+
+          {error && (
+            <div className="mb-6 p-4 bg-red-900/20 border border-red-500/30 rounded-sm">
+              <p className="text-red-400 text-sm">{error}</p>
+            </div>
+          )}
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label className="flex items-center space-x-2 text-château-parchment/60 text-sm mb-2">
                 <User className="w-4 h-4" />
-                <span>full name</span>
+                <span>{t('booking.nameLabel')}</span>
               </label>
               <input
                 type="text"
@@ -119,14 +174,20 @@ export const SimpleBookingForm: React.FC<SimpleBookingFormProps> = ({ room, onCl
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="w-full px-4 py-3 bg-château-dark/50 border border-château-border rounded-sm text-château-mist placeholder-château-stone/50 focus:border-château-parchment/30 focus:outline-none transition-colors"
-                placeholder="enter your name"
+                placeholder={t('booking.namePlaceholder')}
+                aria-label={t('booking.nameLabel')}
+                aria-invalid={!!validation.name}
+                aria-describedby={validation.name ? 'name-error' : undefined}
               />
+              {validation.name && (
+                <p id="name-error" className="text-red-400 text-xs mt-1">{validation.name}</p>
+              )}
             </div>
 
             <div>
               <label className="flex items-center space-x-2 text-château-parchment/60 text-sm mb-2">
                 <Mail className="w-4 h-4" />
-                <span>email</span>
+                <span>{t('booking.emailLabel')}</span>
               </label>
               <input
                 type="email"
@@ -134,14 +195,20 @@ export const SimpleBookingForm: React.FC<SimpleBookingFormProps> = ({ room, onCl
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="w-full px-4 py-3 bg-château-dark/50 border border-château-border rounded-sm text-château-mist placeholder-château-stone/50 focus:border-château-parchment/30 focus:outline-none transition-colors"
-                placeholder="your@email.com"
+                placeholder={t('booking.emailPlaceholder')}
+                aria-label={t('booking.emailLabel')}
+                aria-invalid={!!validation.email}
+                aria-describedby={validation.email ? 'email-error' : undefined}
               />
+              {validation.email && (
+                <p id="email-error" className="text-red-400 text-xs mt-1">{validation.email}</p>
+              )}
             </div>
 
             <div>
               <label className="flex items-center space-x-2 text-château-parchment/60 text-sm mb-2">
                 <Phone className="w-4 h-4" />
-                <span>phone</span>
+                <span>{t('booking.phoneLabel')}</span>
               </label>
               <input
                 type="tel"
@@ -149,20 +216,26 @@ export const SimpleBookingForm: React.FC<SimpleBookingFormProps> = ({ room, onCl
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 className="w-full px-4 py-3 bg-château-dark/50 border border-château-border rounded-sm text-château-mist placeholder-château-stone/50 focus:border-château-parchment/30 focus:outline-none transition-colors"
-                placeholder="+1 234 567 8900"
+                placeholder={t('booking.phonePlaceholder')}
+                aria-label={t('booking.phoneLabel')}
+                aria-invalid={!!validation.phone}
+                aria-describedby={validation.phone ? 'phone-error' : undefined}
               />
+              {validation.phone && (
+                <p id="phone-error" className="text-red-400 text-xs mt-1">{validation.phone}</p>
+              )}
             </div>
 
             <div className="border-t border-château-border pt-6">
               <div className="flex justify-between items-center mb-6">
                 <div>
-                  <p className="text-château-parchment/60 text-sm">5 nights</p>
+                  <p className="text-château-parchment/60 text-sm">{t('booking.nights', { count: nights })}</p>
                   <p className="text-2xl font-serif text-château-parchment">
                     {formatPrice(totalPrice, i18n.language === 'fr' ? 'fr-FR' : 'en-US')}
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="text-château-parchment/60 text-sm">per night</p>
+                  <p className="text-château-parchment/60 text-sm">{t('booking.perNight')}</p>
                   <p className="text-lg text-château-parchment/80">
                     {formatPrice(room.price, i18n.language === 'fr' ? 'fr-FR' : 'en-US')}
                   </p>
@@ -176,7 +249,7 @@ export const SimpleBookingForm: React.FC<SimpleBookingFormProps> = ({ room, onCl
                   variant="ghost"
                   className="flex-1"
                 >
-                  cancel
+                  {t('common.cancel')}
                 </Button>
                 <Button
                   type="submit"
@@ -184,12 +257,12 @@ export const SimpleBookingForm: React.FC<SimpleBookingFormProps> = ({ room, onCl
                   disabled={loading}
                   className="flex-1"
                 >
-                  {loading ? 'processing...' : 'proceed to payment'}
+                  {loading ? t('booking.processing') : t('booking.proceedToPayment')}
                 </Button>
               </div>
 
               <p className="text-center text-château-parchment/40 text-xs mt-4">
-                secure payment by stripe
+                {t('booking.securePayment')}
               </p>
             </div>
           </form>
