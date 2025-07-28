@@ -43,7 +43,10 @@ export const Button: React.FC<ButtonProps> = ({
         className
       )}
       disabled={disabled}
-      {...props}
+      onClick={props.onClick}
+      type={props.type}
+      name={props.name}
+      value={props.value}
     >
       <span className="relative z-10">{children}</span>
       <motion.div
