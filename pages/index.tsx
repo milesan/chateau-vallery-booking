@@ -157,9 +157,16 @@ export default function Home() {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale ?? 'fr', ['common'])),
-    },
+  try {
+    return {
+      props: {
+        ...(await serverSideTranslations(locale ?? 'en', ['common'])),
+      },
+    }
+  } catch (error) {
+    console.error('Error loading translations:', error)
+    return {
+      props: {},
+    }
   }
 }
