@@ -157,16 +157,29 @@ export default function Home() {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  // Skip i18n on build if translations aren't available
+  if (process.env.SKIP_I18N === 'true') {
+    return { props: {} }
+  }
+
   try {
+    const translations = await serverSideTranslations(locale ?? 'en', ['common'])
     return {
       props: {
-        ...(await serverSideTranslations(locale ?? 'en', ['common'])),
+        ...translations,
       },
     }
   } catch (error) {
-    console.error('Error loading translations:', error)
+    console.error('Error loading translations for locale:', locale, error)
+    // Return empty props instead of throwing
     return {
-      props: {},
+      props: {
+        _nextI18Next: {
+          initialI18nStore: { en: { common: {} }, fr: { common: {} } },
+          initialLocale: locale ?? 'en',
+          userConfig: null,
+        }
+      },
     }
   }
 }

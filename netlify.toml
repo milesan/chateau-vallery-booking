@@ -18,3 +18,5 @@
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
+
+# Important: Do NOT redirect the root path - let Next.js handle i18n routing
