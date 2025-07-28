@@ -8,3 +8,5 @@ const nextConfig = {
     formats: ['image/webp', 'image/avif'],
   },
 }
+
+module.exports = nextConfig
