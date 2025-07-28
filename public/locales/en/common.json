@@ -81,6 +81,7 @@
     "genericError": "An error occurred. Please try again.",
     "checkoutFailed": "Failed to create checkout session",
     "stripeLoadFailed": "Failed to load payment system",
-    "paymentFailed": "Payment failed"
+    "paymentFailed": "Payment failed",
+    "stripeNotConfigured": "Payment system is not configured. Please contact support."
   }
 }

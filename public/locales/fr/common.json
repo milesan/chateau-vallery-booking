@@ -81,6 +81,7 @@
     "genericError": "Une erreur s'est produite. Veuillez réessayer.",
     "checkoutFailed": "Échec de la création de la session de paiement",
     "stripeLoadFailed": "Échec du chargement du système de paiement",
-    "paymentFailed": "Le paiement a échoué"
+    "paymentFailed": "Le paiement a échoué",
+    "stripeNotConfigured": "Le système de paiement n'est pas configuré. Veuillez contacter le support."
   }
 }
