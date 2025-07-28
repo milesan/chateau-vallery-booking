@@ -5,6 +5,7 @@
     "close": "Fermer",
     "back": "Retour",
     "continue": "Continuer",
+    "cancel": "Annuler",
     "night": "nuit",
     "nights": "nuits",
     "guest": "personne",
@@ -46,6 +47,19 @@
     "payment": "Paiement",
     "securePayment": "Paiement sécurisé par Stripe",
     "confirm": "Confirmer la réservation",
+    "nameLabel": "Nom complet",
+    "emailLabel": "Email",
+    "phoneLabel": "Téléphone",
+    "namePlaceholder": "Entrez votre nom",
+    "emailPlaceholder": "votre@email.com",
+    "phonePlaceholder": "+33 6 12 34 56 78",
+    "eventDates": "Dates de l'événement",
+    "eventDateRange": "21-26 septembre 2025",
+    "checkInOut": "Arrivée : 15h00 • Départ : 11h30",
+    "nights": "{{count}} nuits",
+    "perNight": "Par nuit",
+    "processing": "Traitement...",
+    "proceedToPayment": "Procéder au paiement",
     "success": {
       "title": "Réservation Confirmée",
       "message": "Votre réservation a été confirmée avec succès. Vous recevrez un email de confirmation sous peu.",
@@ -56,5 +70,17 @@
     "privacy": "Confidentialité",
     "terms": "Conditions",
     "contact": "Contact"
+  },
+  "validation": {
+    "nameRequired": "Le nom est requis",
+    "emailRequired": "L'email est requis",
+    "emailInvalid": "Veuillez entrer une adresse email valide",
+    "phoneRequired": "Le numéro de téléphone est requis"
+  },
+  "errors": {
+    "genericError": "Une erreur s'est produite. Veuillez réessayer.",
+    "checkoutFailed": "Échec de la création de la session de paiement",
+    "stripeLoadFailed": "Échec du chargement du système de paiement",
+    "paymentFailed": "Le paiement a échoué"
   }
 }

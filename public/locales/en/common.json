@@ -5,6 +5,7 @@
     "close": "Close",
     "back": "Back",
     "continue": "Continue",
+    "cancel": "Cancel",
     "night": "night",
     "nights": "nights",
     "guest": "guest",
@@ -46,6 +47,19 @@
     "payment": "Payment",
     "securePayment": "Secure payment by Stripe",
     "confirm": "Confirm Booking",
+    "nameLabel": "Full name",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "namePlaceholder": "Enter your name",
+    "emailPlaceholder": "your@email.com",
+    "phonePlaceholder": "+1 234 567 8900",
+    "eventDates": "Event dates",
+    "eventDateRange": "September 21-26, 2025",
+    "checkInOut": "Check-in: 3:00 PM • Check-out: 11:30 AM",
+    "nights": "{{count}} nights",
+    "perNight": "Per night",
+    "processing": "Processing...",
+    "proceedToPayment": "Proceed to payment",
     "success": {
       "title": "Booking Confirmed",
       "message": "Your booking has been successfully confirmed. You will receive a confirmation email shortly.",
@@ -56,5 +70,17 @@
     "privacy": "Privacy",
     "terms": "Terms",
     "contact": "Contact"
+  },
+  "validation": {
+    "nameRequired": "Name is required",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Please enter a valid email address",
+    "phoneRequired": "Phone number is required"
+  },
+  "errors": {
+    "genericError": "An error occurred. Please try again.",
+    "checkoutFailed": "Failed to create checkout session",
+    "stripeLoadFailed": "Failed to load payment system",
+    "paymentFailed": "Payment failed"
   }
 }
