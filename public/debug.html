@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Page</title>
+</head>
+<body style="font-family: system-ui; padding: 40px; background: #111; color: #eee;">
+    <h1>Static Debug Page</h1>
+    <p>If you can see this, the web server is running.</p>
+    <p>This is a plain HTML file served from /public/debug.html</p>
+    <hr>
+    <h2>Next Steps:</h2>
+    <ul>
+        <li><a href="/api/health" style="color: #4a9eff;">Test API Route (/api/health)</a></li>
+        <li><a href="/simple" style="color: #4a9eff;">Test Simple Page (/simple)</a></li>
+        <li><a href="/" style="color: #4a9eff;">Test Home Page (/)</a></li>
+    </ul>
+    <p style="margin-top: 40px; color: #888;">
+        Timestamp: <script>document.write(new Date().toISOString())</script>
+    </p>
+</body>
+</html>
