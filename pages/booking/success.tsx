@@ -11,22 +11,32 @@ import { LanguageSwitch } from '../../components/LanguageSwitch'
 export default function BookingSuccess() {
   const { t } = useTranslation()
   const router = useRouter()
-  const { session_id } = router.query
+  const { session_id, demo, bookingId, room, name } = router.query
   const [loading, setLoading] = useState(true)
   const [bookingDetails, setBookingDetails] = useState<any>(null)
 
   useEffect(() => {
-    if (session_id) {
-      // In a real app, you would fetch booking details from your backend
-      // using the session_id
+    if (demo === 'true' && bookingId) {
+      // Demo mode: Use the provided booking ID
+      setBookingDetails({
+        confirmationNumber: bookingId as string,
+        roomName: room as string,
+        guestName: name as string,
+        isDemo: true,
+      })
+      setLoading(false)
+    } else if (session_id) {
+      // Production mode: Would fetch from Stripe
       setTimeout(() => {
         setBookingDetails({
           confirmationNumber: 'CHV-' + Math.random().toString(36).substring(7).toUpperCase(),
         })
         setLoading(false)
       }, 1000)
+    } else {
+      setLoading(false)
     }
-  }, [session_id])
+  }, [session_id, demo, bookingId, room, name])
 
   return (
     <div className="min-h-screen relative overflow-hidden flex items-center justify-center">
@@ -42,21 +52,38 @@ export default function BookingSuccess() {
           <CheckCircle className="w-24 h-24 text-château-parchment mx-auto mb-6" />
           
           <h1 className="text-4xl font-serif text-château-parchment mb-4">
-            {t('booking.success.title', 'Réservation Confirmée')}
+            {bookingDetails?.isDemo 
+              ? 'Demo Booking Confirmed' 
+              : t('booking.success.title', 'Réservation Confirmée')}
           </h1>
           
           <p className="text-château-stone mb-8 max-w-md mx-auto">
-            {t('booking.success.message', 'Votre réservation a été confirmée avec succès. Vous recevrez un email de confirmation sous peu.')}
+            {bookingDetails?.isDemo 
+              ? '🎭 This is a demo booking for testing purposes. No payment was processed.'
+              : t('booking.success.message', 'Votre réservation a été confirmée avec succès. Vous recevrez un email de confirmation sous peu.')}
           </p>
           
           {bookingDetails && (
             <div className="bg-château-dark/40 backdrop-blur-sm border border-château-parchment/20 rounded-lg p-6 max-w-sm mx-auto mb-8">
+              {bookingDetails.isDemo && (
+                <div className="mb-4 p-3 bg-yellow-500/10 border border-yellow-500/30 rounded">
+                  <p className="text-yellow-400 text-xs">DEMO MODE</p>
+                </div>
+              )}
               <p className="text-château-stone text-sm mb-2">
                 {t('booking.success.confirmationNumber', 'Numéro de confirmation')}
               </p>
-              <p className="text-2xl font-serif text-château-parchment">
+              <p className="text-2xl font-serif text-château-parchment mb-4">
                 {bookingDetails.confirmationNumber}
               </p>
+              {bookingDetails.roomName && (
+                <>
+                  <p className="text-château-stone text-sm">Room: {bookingDetails.roomName}</p>
+                </>
+              )}
+              {bookingDetails.guestName && (
+                <p className="text-château-stone text-sm">Guest: {bookingDetails.guestName}</p>
+              )}
             </div>
           )}
           

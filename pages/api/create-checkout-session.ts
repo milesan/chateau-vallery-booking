@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import Stripe from 'stripe'
 
 export default async function handler(
   req: NextApiRequest,
@@ -8,17 +7,6 @@ export default async function handler(
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
   }
-
-  // Initialize Stripe with API key
-  const stripeSecretKey = process.env.STRIPE_SECRET_KEY
-  if (!stripeSecretKey) {
-    console.error('STRIPE_SECRET_KEY is not set in environment variables')
-    return res.status(500).json({ error: 'Payment system is not configured' })
-  }
-
-  const stripe = new Stripe(stripeSecretKey, {
-    apiVersion: '2023-10-16',
-  })
 
   try {
     const {
@@ -33,6 +21,7 @@ export default async function handler(
       nights,
       totalPrice,
       locale,
+      demoMode,
     } = req.body
 
     // Validate required fields
@@ -45,56 +34,36 @@ export default async function handler(
       return res.status(400).json({ error: 'Invalid price' })
     }
 
-    const session = await stripe.checkout.sessions.create({
-      payment_method_types: ['card'],
-      line_items: [
-        {
-          price_data: {
-            currency: 'eur',
-            product_data: {
-              name: roomName,
-              description: `${checkIn} - ${checkOut} (${nights} ${nights > 1 ? 'nuits' : 'nuit'})`,
-              metadata: {
-                roomId,
-                checkIn,
-                checkOut,
-              },
-            },
-            unit_amount: totalPrice * 100, // Stripe expects amounts in cents
-          },
-          quantity: 1,
-        },
-      ],
-      mode: 'payment',
-      success_url: `${req.headers.origin}/booking/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${req.headers.origin}/?canceled=true`,
-      customer_email: email,
-      locale: locale === 'fr' ? 'fr' : 'en',
-      metadata: {
-        roomId,
+    // DEMO MODE: Return mock booking ID without Stripe
+    if (demoMode) {
+      // Generate a mock booking ID
+      const bookingId = `DEMO-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
+      
+      console.log('Demo booking created:', {
+        bookingId,
+        roomName,
+        guestName: name,
         checkIn,
         checkOut,
-        guestName: name,
-        guestEmail: email,
-        guestPhone: phone,
-        specialRequests: specialRequests || '',
-      },
-    })
+        totalPrice,
+      })
 
-    res.status(200).json({ sessionId: session.id })
+      // Return mock booking response
+      return res.status(200).json({ 
+        bookingId,
+        demoMode: true,
+        message: 'Demo booking created successfully'
+      })
+    }
+
+    // Production mode: Currently disabled for testing
+    return res.status(503).json({ 
+      error: 'Payment system is temporarily disabled for deployment testing. Please use demo mode.' 
+    })
+    
   } catch (error: any) {
-    console.error('Stripe API error:', error)
-    
-    // Handle Stripe-specific errors
-    if (error?.type === 'StripeAuthenticationError') {
-      return res.status(500).json({ error: 'Invalid API key. Please check your Stripe configuration.' })
-    }
-    if (error?.type === 'StripeInvalidRequestError') {
-      return res.status(400).json({ error: 'Invalid request to payment system' })
-    }
-    
-    // Generic error response
-    const errorMessage = error?.message || 'Failed to create checkout session'
+    console.error('Booking error:', error)
+    const errorMessage = error?.message || 'Failed to create booking'
     res.status(500).json({ error: errorMessage })
   }
 }

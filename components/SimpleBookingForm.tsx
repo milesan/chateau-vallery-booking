@@ -2,21 +2,14 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'next-i18next'
-import { loadStripe } from '@stripe/stripe-js'
 import { Room } from '../types'
 import { formatPrice } from '../lib/utils'
 import { Button } from './Button'
 import { X, User, Mail, Phone } from 'lucide-react'
+import { useRouter } from 'next/router'
 
-// Check if Stripe publishable key is configured
-const stripeKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
-if (!stripeKey || stripeKey.includes('YOUR_PUBLISHABLE_KEY')) {
-  console.warn('Stripe publishable key is not properly configured. Payment will not work.')
-}
-
-const stripePromise = stripeKey && !stripeKey.includes('YOUR_PUBLISHABLE_KEY') 
-  ? loadStripe(stripeKey) 
-  : null
+// DEMO MODE: Stripe disabled for deployment testing
+const DEMO_MODE = true
 
 interface SimpleBookingFormProps {
   room: Room
@@ -25,6 +18,7 @@ interface SimpleBookingFormProps {
 
 export const SimpleBookingForm: React.FC<SimpleBookingFormProps> = ({ room, onClose }) => {
   const { t, i18n } = useTranslation()
+  const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [formData, setFormData] = useState({
@@ -82,51 +76,46 @@ export const SimpleBookingForm: React.FC<SimpleBookingFormProps> = ({ room, onCl
       return
     }
 
-    // Check if Stripe is properly configured
-    if (!stripePromise) {
-      setError(t('errors.stripeNotConfigured') || 'Payment system is not configured. Please contact support.')
-      return
-    }
-
     setLoading(true)
 
-    try {
-      const response = await fetch('/api/create-checkout-session', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          roomId: room.id,
-          roomName: room.name[i18n.language as 'fr' | 'en'],
-          checkIn,
-          checkOut,
-          ...formData,
-          nights,
-          totalPrice,
-          locale: i18n.language,
-        }),
-      })
+    if (DEMO_MODE) {
+      // Demo mode: Simulate successful booking without Stripe
+      try {
+        const response = await fetch('/api/create-checkout-session', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            roomId: room.id,
+            roomName: room.name[i18n.language as 'fr' | 'en'],
+            checkIn,
+            checkOut,
+            ...formData,
+            nights,
+            totalPrice,
+            locale: i18n.language,
+            demoMode: true,
+          }),
+        })
 
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}))
-        throw new Error(errorData.error || t('errors.checkoutFailed'))
+        if (!response.ok) {
+          const errorData = await response.json().catch(() => ({}))
+          throw new Error(errorData.error || 'Booking failed')
+        }
+
+        const { bookingId } = await response.json()
+        
+        // Redirect to success page
+        await router.push(`/booking/success?demo=true&bookingId=${bookingId}&room=${encodeURIComponent(room.name[i18n.language as 'fr' | 'en'])}&name=${encodeURIComponent(formData.name)}`)
+      } catch (error) {
+        console.error('Error creating booking:', error)
+        setError(error instanceof Error ? error.message : 'Something went wrong')
+        setLoading(false)
       }
-
-      const { sessionId } = await response.json()
-      const stripe = await stripePromise
-
-      if (!stripe) {
-        throw new Error(t('errors.stripeLoadFailed'))
-      }
-
-      const { error: stripeError } = await stripe.redirectToCheckout({ sessionId })
-      if (stripeError) {
-        throw new Error(stripeError.message || t('errors.paymentFailed'))
-      }
-    } catch (error) {
-      console.error('Error creating checkout session:', error)
-      setError(error instanceof Error ? error.message : t('errors.genericError'))
+    } else {
+      // Production mode with Stripe (currently disabled)
+      setError('Payment system is temporarily unavailable for testing')
       setLoading(false)
     }
   }
@@ -271,12 +260,12 @@ export const SimpleBookingForm: React.FC<SimpleBookingFormProps> = ({ room, onCl
                   disabled={loading}
                   className="flex-1"
                 >
-                  {loading ? t('booking.processing') : t('booking.proceedToPayment')}
+                  {loading ? t('booking.processing') : (DEMO_MODE ? 'Complete Booking (Demo)' : t('booking.proceedToPayment'))}
                 </Button>
               </div>
 
               <p className="text-center text-château-parchment/40 text-xs mt-4">
-                {t('booking.securePayment')}
+                {DEMO_MODE ? '🎭 Demo Mode - No payment required' : t('booking.securePayment')}
               </p>
             </div>
           </form>

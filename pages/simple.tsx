@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 // Simple page without i18n dependencies to test basic functionality
 export default function SimplePage() {
   return (
